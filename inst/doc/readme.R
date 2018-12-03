@@ -6,6 +6,9 @@ knitr::opts_chunk$set(
 library(ggplot2)
 library(SMFilter)
 
+## ----install1, eval=F----------------------------------------------------
+#  install.packages("SMFilter")
+
 ## ----install2, eval=F----------------------------------------------------
 #  devtools::install_github("yukai-yang/SMFilter")
 
