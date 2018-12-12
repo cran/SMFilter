@@ -12,14 +12,14 @@
 
 <meta name="author" content="Yukai Yang" />
 
-<meta name="date" content="2018-12-03" />
+<meta name="date" content="2018-12-12" />
 
 <title>SMFilter: Filtering Algorithms for the State-Space models on the Stiefel Manifold</title>
 
 
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
+<style type="text/css" data-origin="pandoc">
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
   margin: 0; padding: 0; vertical-align: baseline; border: none; }
@@ -55,7 +55,29 @@ code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
 code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+
 </style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -70,16 +92,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">SMFilter: Filtering Algorithms for the State-Space models on the Stiefel Manifold</h1>
 <h4 class="author"><em>Yukai Yang</em></h4>
-<h4 class="date"><em>2018-12-03</em></h4>
+<h4 class="date"><em>2018-12-12</em></h4>
 
 
 
-<div id="smfilter-version-1.0.2-red-filter" class="section level1">
-<h1>SMFilter version 1.0.2 (Red Filter)</h1>
+<div id="smfilter-version-1.0.3-red-filter" class="section level1">
+<h1>SMFilter version 1.0.3 (Red Filter)</h1>
 <p>The package implements the filtering algorithms for the state-space models on the Stiefel manifold. It also implements sampling algorithms for uniform, vector Langevin-Bingham and matrix Langevin-Bingham distributions on the Stiefel manifold. You can also find the package on CRAN, see</p>
 <p><a href="https://CRAN.R-project.org/package=SMFilter">SMFilter@CRAN</a></p>
 <p>and the corresponding paper</p>
-<p><a href="http://econ.au.dk/fileadmin/site_files/filer_oekonomi/Working_Papers/CREATES/2018/rp18_30_2.pdf">State-Space Models on the Stiefel Manifold with a New Approach to Nonlinear Filtering</a></p>
+<p><a href="https://www.mdpi.com/2225-1146/6/4/48">State-Space Models on the Stiefel Manifold with a New Approach to Nonlinear Filtering</a></p>
 <div id="how-to-install" class="section level2">
 <h2>How to install</h2>
 <p>You can either install the stable version from CRAN</p>
@@ -94,7 +116,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(SMFilter)</code></pre></div>
 <p>You can first check the information and the current version number by running</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">version</span>()
-<span class="co">#&gt; SMFilter version 1.0.2 (Red Filter)</span></code></pre></div>
+<span class="co">#&gt; SMFilter version 1.0.3 (Red Filter)</span></code></pre></div>
 <p>Then you can take a look at all the available functions and data in the package</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>( <span class="kw">grep</span>(<span class="st">&quot;SMFilter&quot;</span>, <span class="kw">search</span>()) ) 
 <span class="co">#&gt; [1] &quot;FDist2&quot;       &quot;FilterModel1&quot; &quot;FilterModel2&quot; &quot;SimModel1&quot;   </span>
